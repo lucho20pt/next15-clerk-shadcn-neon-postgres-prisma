@@ -10,6 +10,7 @@ import {
 
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
+import { Button } from '@/components/ui/button'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,14 +40,20 @@ export default function RootLayout({
         >
           <header className="flex justify-end items-center p-4 gap-4 h-16">
             <SignedOut>
-              <SignInButton />
-              <SignUpButton />
+              <SignInButton>
+                <Button>Sign in</Button>
+              </SignInButton>
+              <SignUpButton>
+                <Button>Sign out</Button>
+              </SignUpButton>
             </SignedOut>
             <SignedIn>
               <UserButton />
             </SignedIn>
           </header>
-          {children}
+          <main className="flex flex-col items-center justify-center min-h-screen gap-8">
+            {children}
+          </main>
         </body>
       </html>
     </ClerkProvider>
