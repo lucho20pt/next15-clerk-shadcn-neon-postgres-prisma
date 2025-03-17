@@ -7,6 +7,8 @@ import {
   SignedOut,
   UserButton,
 } from '@clerk/nextjs'
+import { ThemeProvider } from '@/components/theme-provider'
+import ThemeToggle from '@/components/theme-toggle'
 
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
@@ -38,22 +40,31 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <SignedOut>
-              <SignInButton>
-                <Button>Sign in</Button>
-              </SignInButton>
-              <SignUpButton>
-                <Button>Sign out</Button>
-              </SignUpButton>
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
-          <main className="flex flex-col items-center justify-center min-h-screen gap-8">
-            {children}
-          </main>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <header className="flex justify-end items-center p-4 gap-4 h-16">
+              <ThemeToggle />
+
+              <SignedOut>
+                <SignInButton>
+                  <Button>Sign in</Button>
+                </SignInButton>
+                <SignUpButton>
+                  <Button>Sign out</Button>
+                </SignUpButton>
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+            </header>
+            <main className="flex flex-col items-center justify-center min-h-screen gap-8">
+              {children}
+            </main>
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
