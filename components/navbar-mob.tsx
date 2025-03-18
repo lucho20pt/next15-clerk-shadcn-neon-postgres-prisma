@@ -11,7 +11,7 @@ import { Sidebar } from 'lucide-react'
 const NavbarMob = () => {
   return (
     <Sheet>
-      <SheetTrigger>
+      <SheetTrigger className="flex md:hidden hover:cursor-pointer">
         <Sidebar />
       </SheetTrigger>
       <SheetContent>
