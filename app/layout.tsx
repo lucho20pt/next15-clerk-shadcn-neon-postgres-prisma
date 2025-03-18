@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/header'
+import Sidebar from '@/components/sidebar'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,9 +40,13 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Header />
-            <main className="flex flex-col items-center justify-center min-h-screen gap-8">
+            <div className="container flex flex-row items-start justify-between min-h-screen gap-20 p-16">
+              <Sidebar
+                className="hidden md:flex 
+              dark:bg-amber-500 bg-pink-500"
+              />
               {children}
-            </main>
+            </div>
           </ThemeProvider>
         </body>
       </html>
