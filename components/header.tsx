@@ -1,38 +1,20 @@
-import Link from 'next/link'
-import React from 'react'
 import UserLogin from '@/components/user-login'
 import ThemeToggle from '@/components/theme-toggle'
+import NavbarDesk from '@/components/navbar-desk'
+import NavbarMob from '@/components/navbar-mob'
 
-const Header = () => {
+const Header = async () => {
   return (
     <header
-      className="flex flex-row justify-center md:justify-around items-center p-4 gap-4 min-h-16 flex-wrap 
+      className="flex flex-row justify-around items-center p-4 gap-4 min-h-16 flex-wrap 
     bg-white text-black dark:bg-black dark:text-white border border-b-amber-500 dark:border-b-pink-500"
     >
       <h1 className="flex font-bold text-lg justify-start">SocialHub</h1>
       <nav className="flex flex-row items-center justify-end gap-4">
         <ThemeToggle />
-        <ul
-          className="flex flex-row items-center justify-center gap-4 font-bold
-        [&>*]:hover:opacity-80 [&>*]:hover:underline"
-        >
-          <li>
-            <Link href="/" aria-label="Home">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link href="/notifications" aria-label="Notifications">
-              Notifications
-            </Link>
-          </li>
-          <li>
-            <Link href="/profile" aria-label="Profile">
-              Profile
-            </Link>
-          </li>
-        </ul>
+        <NavbarDesk />
         <UserLogin />
+        <NavbarMob />
       </nav>
     </header>
   )
