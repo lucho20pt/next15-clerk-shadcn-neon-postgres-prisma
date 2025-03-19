@@ -4,12 +4,13 @@ import {
   SheetDescription,
   SheetHeader,
   SheetTitle,
-  SheetTrigger
+  SheetTrigger,
 } from '@/components/ui/sheet'
 import { Sidebar } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import ThemeToggle from '@/components/theme-toggle'
 import Navlinks from '@/components/navlinks'
+import UserSignedIn from '@/components/user-signed-in'
 
 const NavbarMob = async () => {
   return (
@@ -21,8 +22,9 @@ const NavbarMob = async () => {
       </SheetTrigger>
       <SheetContent side="right">
         <SheetHeader>
-          <SheetTitle>
+          <SheetTitle className='flex flex-row items-center justify-start gap-6'>
             <ThemeToggle />
+            <UserSignedIn />
             <span className="sr-only">Menu</span>
           </SheetTitle>
         </SheetHeader>

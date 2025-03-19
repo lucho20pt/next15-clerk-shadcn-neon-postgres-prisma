@@ -2,6 +2,7 @@ import Link from 'next/link'
 import ThemeToggle from '@/components/theme-toggle'
 import NavbarDesk from '@/components/navbar-desk'
 import NavbarMob from '@/components/navbar-mob'
+import UserSignedIn from '@/components/user-signed-in'
 
 const Header = async () => {
   return (
@@ -13,6 +14,7 @@ const Header = async () => {
         <Link href="/">SocialHub</Link>
       </h1>
       <nav className="flex flex-row items-center justify-end gap-6">
+        <UserSignedIn />
         <ThemeToggle />
         <NavbarDesk />
         <NavbarMob />

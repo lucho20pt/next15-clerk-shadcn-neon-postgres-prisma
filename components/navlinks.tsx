@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
 import { currentUser } from '@clerk/nextjs/server'
-import UserLogin from '@/components/user-login'
+import UserSignedOut from '@/components/user-signed-out'
+// import UserSignedIn from '@/components/user-signed-in'
 
 const Navlinks = async () => {
   const user = await currentUser()
@@ -9,7 +10,7 @@ const Navlinks = async () => {
   return (
     <Fragment>
       <li className="flex mx-auto md:hidden [&_*]:text-sm">
-        <UserLogin />
+        <UserSignedOut />
       </li>
       <li className="hover:opacity-80 hover:underline">
         <Link href="/" aria-label="Home">
@@ -32,12 +33,10 @@ const Navlinks = async () => {
         </>
       ) : null}
 
-      <Link href="/contact" aria-label="Contact">
-        Contact
-      </Link>
-
-      <li className="hidden md:flex">
-        <UserLogin />
+      <li className="hover:opacity-80 hover:underline">
+        <Link href="/contact" aria-label="Contact">
+          Contact
+        </Link>
       </li>
     </Fragment>
   )

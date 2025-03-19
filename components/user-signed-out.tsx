@@ -1,13 +1,7 @@
-import {
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from '@clerk/nextjs'
+import { SignInButton, SignUpButton, SignedOut } from '@clerk/nextjs'
 import { Button } from '@/components/ui/button'
 
-const UserLogin = () => {
+const UserSignedOut = () => {
   return (
     <div className="flex justify-center items-center gap-4">
       <SignedOut>
@@ -29,16 +23,8 @@ const UserLogin = () => {
           <Button variant="outline">Sign Up</Button>
         </SignUpButton>
       </SignedOut>
-
-      <SignedIn>
-        <UserButton
-          appearance={{
-            elements: { userButtonPopoverCard: { pointerEvents: 'initial' } },
-          }}
-        />
-      </SignedIn>
     </div>
   )
 }
 
-export default UserLogin
+export default UserSignedOut
