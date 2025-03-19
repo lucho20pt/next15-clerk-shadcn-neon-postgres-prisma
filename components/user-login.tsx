@@ -11,11 +11,21 @@ const UserLogin = () => {
   return (
     <div className="flex justify-center items-center gap-4">
       <SignedOut>
-        <SignInButton mode="modal">
+        <SignInButton
+          mode="modal"
+          appearance={{
+            elements: { modalContent: { pointerEvents: 'initial' } },
+          }}
+        >
           <Button variant="outline">Sign In</Button>
         </SignInButton>
 
-        <SignUpButton mode="modal">
+        <SignUpButton
+          mode="modal"
+          appearance={{
+            elements: { modalContent: { pointerEvents: 'initial' } },
+          }}
+        >
           <Button variant="outline">Sign Up</Button>
         </SignUpButton>
       </SignedOut>
