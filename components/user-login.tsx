@@ -21,7 +21,11 @@ const UserLogin = () => {
       </SignedOut>
 
       <SignedIn>
-        <UserButton />
+        <UserButton
+          appearance={{
+            elements: { userButtonPopoverCard: { pointerEvents: 'initial' } },
+          }}
+        />
       </SignedIn>
     </div>
   )
