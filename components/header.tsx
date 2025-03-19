@@ -12,7 +12,7 @@ const Header = async () => {
       <h1 className="flex font-bold text-lg justify-start">
         <Link href="/">SocialHub</Link>
       </h1>
-      <nav className="flex flex-row items-center justify-end gap-4">
+      <nav className="flex flex-row items-center justify-end gap-6">
         <ThemeToggle />
         <NavbarDesk />
         <NavbarMob />
