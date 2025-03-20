@@ -3,8 +3,13 @@ import ThemeToggle from '@/components/theme-toggle'
 import NavbarDesk from '@/components/navbar-desk'
 import NavbarMob from '@/components/navbar-mob'
 import UserSignedIn from '@/components/user-signed-in'
+import { currentUser } from '@clerk/nextjs/server'
+import { syncUserAction } from '@/actions/user.action'
 
 const Header = async () => {
+  const user = await currentUser()
+  if (user) await syncUserAction() // POST
+
   return (
     <header
       className="flex flex-row justify-around items-center p-4 gap-4 min-h-16 flex-wrap 
