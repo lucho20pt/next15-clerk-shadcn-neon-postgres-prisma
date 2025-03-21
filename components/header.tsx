@@ -2,7 +2,6 @@ import Link from 'next/link'
 import ThemeToggle from '@/components/theme-toggle'
 import NavbarDesk from '@/components/navbar-desk'
 import NavbarMob from '@/components/navbar-mob'
-import UserSignedIn from '@/components/user-signed-in'
 import { currentUser } from '@clerk/nextjs/server'
 import { syncUserAction } from '@/actions/user.action'
 
@@ -18,8 +17,7 @@ const Header = async () => {
       <h1 className="flex font-bold text-lg justify-start">
         <Link href="/">SocialHub</Link>
       </h1>
-      <nav className="flex flex-row items-center justify-end gap-6">
-        <UserSignedIn />
+      <nav className="flex flex-row items-center justify-end gap-3 md:gap-6">
         <ThemeToggle />
         <NavbarDesk />
         <NavbarMob />

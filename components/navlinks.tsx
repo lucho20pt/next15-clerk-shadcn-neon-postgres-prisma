@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import Link from 'next/link'
 import { currentUser } from '@clerk/nextjs/server'
 import UserSignedOut from '@/components/user-signed-out'
-// import UserSignedIn from '@/components/user-signed-in'
+import UserSignedIn from '@/components/user-signed-in'
 
 const Navlinks = async () => {
   const user = await currentUser()
@@ -37,6 +37,10 @@ const Navlinks = async () => {
         <Link href="/contact" aria-label="Contact">
           Contact
         </Link>
+      </li>
+      <li className="hidden md:flex [&_*]:text-sm">
+        <UserSignedOut />
+        <UserSignedIn />
       </li>
     </Fragment>
   )
