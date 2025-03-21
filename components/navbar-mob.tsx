@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import {
   Sheet,
   SheetContent,
@@ -14,30 +15,35 @@ import UserSignedIn from '@/components/user-signed-in'
 
 const NavbarMob = async () => {
   return (
-    <Sheet>
-      <SheetTrigger asChild className="flex md:hidden">
-        <Button variant="outline">
-          <Sidebar />
-        </Button>
-      </SheetTrigger>
-      <SheetContent side="right">
-        <SheetHeader>
-          <SheetTitle className='flex flex-row items-center justify-start gap-6'>
-            <ThemeToggle />
-            <UserSignedIn />
-            <span className="sr-only">Menu</span>
-          </SheetTitle>
-        </SheetHeader>
-        <SheetDescription asChild>
-          <ul
-            className="flex flex-col items-start justify-start gap-8 p-8 
+    <Fragment>
+      <div className="flex md:hidden visible">
+        <UserSignedIn />
+      </div>
+      <Sheet>
+        <SheetTrigger asChild className="flex md:hidden">
+          <Button variant="outline">
+            <Sidebar />
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="right">
+          <SheetHeader>
+            <SheetTitle className="flex flex-row items-center justify-start gap-6">
+              <ThemeToggle />
+              <UserSignedIn />
+              <span className="sr-only">Menu</span>
+            </SheetTitle>
+          </SheetHeader>
+          <SheetDescription asChild>
+            <ul
+              className="flex flex-col items-start justify-start gap-8 p-8 
             font-bold [&_*]:text-4xl"
-          >
-            <Navlinks />
-          </ul>
-        </SheetDescription>
-      </SheetContent>
-    </Sheet>
+            >
+              <Navlinks />
+            </ul>
+          </SheetDescription>
+        </SheetContent>
+      </Sheet>
+    </Fragment>
   )
 }
 
