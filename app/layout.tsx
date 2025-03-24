@@ -42,10 +42,7 @@ export default function RootLayout({
           >
             <Header />
             <div className="container mx-auto flex flex-row items-start justify-between min-h-screen gap-10 lg:gap-20 py-12 px-12">
-              <Sidebar
-                className="hidden md:flex min-w-[14rem]
-              dark:bg-amber-500 bg-pink-500"
-              />
+              <Sidebar className="hidden md:flex flex-col items-center justify-center min-w-[14rem]" />
               <Fragment>{children}</Fragment>
             </div>
           </ThemeProvider>

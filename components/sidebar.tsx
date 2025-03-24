@@ -1,21 +1,18 @@
 import React from 'react'
+import Unauthenticated from '@/components/unauthenticated'
+import { currentUser } from '@clerk/nextjs/server'
 
 interface SidebarProps {
   className?: string
 }
-const Sidebar: React.FC<SidebarProps> = ({ className }) => {
+const Sidebar: React.FC<SidebarProps> = async ({ className }) => {
+  const user = await currentUser()
+  
   return (
-    <div className={`${className} flex flex-col items-center justify-center gap-4`}>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, ab
-        odio. Voluptatibus, officiis totam qui quia inventore quisquam quae
-        dicta?
-      </p>
-      <ul className='flex flex-col list-disc'>
-        <li>lorem</li>
-        <li>lorem</li>
-        <li>lorem</li>
-      </ul>
+    <div
+      className={`${className} flex flex-col items-center justify-center gap-4`}
+    >
+      {!user ? <Unauthenticated /> : <p>user</p>}
     </div>
   )
 }
