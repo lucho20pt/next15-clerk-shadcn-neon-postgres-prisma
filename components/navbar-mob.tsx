@@ -7,7 +7,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
-import { Sidebar } from 'lucide-react'
+import { MenuIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import ThemeToggle from '@/components/theme-toggle'
 import Navlinks from '@/components/navlinks'
@@ -22,7 +22,7 @@ const NavbarMob = async () => {
       <Sheet>
         <SheetTrigger asChild className="flex md:hidden">
           <Button variant="outline">
-            <Sidebar />
+            <MenuIcon />
           </Button>
         </SheetTrigger>
         <SheetContent side="right">
