@@ -10,7 +10,7 @@ const Authenticated = async () => {
   return (
     <section className="flex flex-col items-center justify-center gap-4 bg-accent">
       <Image
-        src={userImageUrl || './default-image.png'}
+        src={userImageUrl || '/default-image.png'}
         alt={`${userFirstName || 'User'} ${userLastName || ''}`}
         width={120}
         height={120}
