@@ -1,22 +1,15 @@
-import React from 'react'
+import UserPanel from '@/components/user-panel'
 
 interface SidebarProps {
   className?: string
 }
-const Sidebar: React.FC<SidebarProps> = ({ className }) => {
+const Sidebar: React.FC<SidebarProps> = async ({ className }) => {
   return (
-    <div className={`${className} flex flex-col items-center justify-center gap-4`}>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, ab
-        odio. Voluptatibus, officiis totam qui quia inventore quisquam quae
-        dicta?
-      </p>
-      <ul className='flex flex-col list-disc'>
-        <li>lorem</li>
-        <li>lorem</li>
-        <li>lorem</li>
-      </ul>
-    </div>
+    <aside
+      className={`${className} flex flex-col items-center justify-center gap-4`}
+    >
+      <UserPanel />
+    </aside>
   )
 }
 
