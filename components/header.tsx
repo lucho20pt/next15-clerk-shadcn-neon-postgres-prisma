@@ -6,6 +6,7 @@ import { currentUser } from '@clerk/nextjs/server'
 import { syncUserAction } from '@/actions/user.action'
 
 const Header = async () => {
+  // const { userId } = await auth()
   const user = await currentUser()
   if (user) await syncUserAction() // POST
 

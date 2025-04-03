@@ -3,6 +3,7 @@
 import { prisma } from '@/lib/prisma'
 import { auth, currentUser } from '@clerk/nextjs/server'
 
+// syncUser from Clerk to Neon
 export async function syncUserAction() {
   try {
     const { userId } = await auth()
@@ -16,7 +17,7 @@ export async function syncUserAction() {
         clerkId: userId,
       },
     })
-    
+
     if (existingUser) return existingUser
 
     // create user
@@ -34,5 +35,25 @@ export async function syncUserAction() {
     return dbUser
   } catch (error) {
     console.log('syncUser error', error)
+  }
+}
+
+// getUser from Neon db
+export async function getUserFromNeon(userId: string) {
+  try {
+    const user = prisma.user.findUnique({
+      where: {
+        clerkId: userId,
+      },
+    })
+
+    if (!user) {
+      throw new Error('User not found in Neon database')
+    }
+
+    return user
+  } catch (error) {
+    console.log('getUserFromNeon error:', error)
+    throw error
   }
 }
