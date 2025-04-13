@@ -1,4 +1,4 @@
-import UserPanel from '@/components/user-panel'
+import UserPanel from '@/components/user/user-panel'
 
 interface SidebarProps {
   className?: string

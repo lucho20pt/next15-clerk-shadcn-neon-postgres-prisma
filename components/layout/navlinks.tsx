@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import Link from 'next/link'
 import { currentUser } from '@clerk/nextjs/server'
-import UserSignedOut from '@/components/user-signed-out'
-import UserSignedIn from '@/components/user-signed-in'
+import UserSignedOut from '@/components/user/user-signed-out'
+import UserSignedIn from '@/components/user/user-signed-in'
 
 const Navlinks = async () => {
   const user = await currentUser()

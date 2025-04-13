@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
-import { ThemeProvider } from '@/components/theme-provider'
+import { ThemeProvider } from '@/components/theme/theme-provider'
 
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/header'
-import Sidebar from '@/components/sidebar'
+import Header from '@/components/layout/header'
+import Sidebar from '@/components/layout/sidebar'
 import { Fragment } from 'react'
 
 const geistSans = Geist({
