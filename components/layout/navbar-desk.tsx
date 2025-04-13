@@ -1,5 +1,5 @@
 import React from 'react'
-import Navlinks from '@/components/navlinks'
+import Navlinks from '@/components/layout/navlinks'
 
 const NavbarDesk = async () => {
 

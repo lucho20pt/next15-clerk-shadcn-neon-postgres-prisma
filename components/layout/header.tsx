@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import ThemeToggle from '@/components/theme-toggle'
-import NavbarDesk from '@/components/navbar-desk'
-import NavbarMob from '@/components/navbar-mob'
+import ThemeToggle from '@/components/theme/theme-toggle'
+import NavbarDesk from '@/components/layout/navbar-desk'
+import NavbarMob from '@/components/layout/navbar-mob'
 import { currentUser } from '@clerk/nextjs/server'
 import { syncUserAction } from '@/actions/user.action'
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import Unauthenticated from '@/components/unauthenticated'
-import Authenticated from '@/components/authenticated'
+import Unauthenticated from '@/components/user/unauthenticated'
+import Authenticated from '@/components/user/authenticated'
 import { auth } from '@clerk/nextjs/server'
 
 interface UserPanelProps {

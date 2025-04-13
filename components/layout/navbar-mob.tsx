@@ -9,9 +9,9 @@ import {
 } from '@/components/ui/sheet'
 import { MenuIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import ThemeToggle from '@/components/theme-toggle'
-import Navlinks from '@/components/navlinks'
-import UserSignedIn from '@/components/user-signed-in'
+import ThemeToggle from '@/components/theme/theme-toggle'
+import Navlinks from '@/components/layout/navlinks'
+import UserSignedIn from '@/components/user/user-signed-in'
 
 const NavbarMob = async () => {
   return (

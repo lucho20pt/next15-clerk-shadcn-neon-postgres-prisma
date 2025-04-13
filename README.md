@@ -35,7 +35,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Project Structure
 
-- **`components/`**: Contains reusable UI components like `Sidebar`, `Header`, and `UserPanel`.
+- **`components/`**: Contains reusable and modular components, organized into subfolders:
+  - **`layout/`**: Layout-related components like `Header` and `Sidebar`.
+  - **`user/`**: User-related components like `UserPanel`, `Authenticated`, and `Unauthenticated`.
+  - **`ui/`**: Reusable UI components like `ThemeToggle`.
+  - **`shared/`**: Shared components like `LoadingSpinner` and `ErrorBoundary`.
 - **`actions/`**: Includes server-side actions like `syncUserAction` and `getUserFromNeon`.
 - **`services/`**: Handles separation of concerns between Clerk and Neon with `clerk.service.ts` and `neon.service.ts`.
 - **`prisma/`**: Contains the Prisma schema and migrations for managing the database.
