@@ -21,6 +21,17 @@ cd next15-clerk-shadcn-neon-postgres-prisma
 npm install
 ```
 
+Define .env variables for (example .env.example):
+- clerk
+- neon
+
+Push prisma schema model
+
+Run
+```bash
+npx prisma db push
+```
+
 Then, run the development server:
 
 ```bash
