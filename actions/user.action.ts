@@ -3,7 +3,12 @@
 import { prisma } from '@/lib/prisma'
 import { auth, currentUser } from '@clerk/nextjs/server'
 
-// syncUser from Clerk to Neon
+/**
+ * Ensures the user is persisted in the Neon database.
+ * - If the user exists in Neon, it returns the user.
+ * - If the user does not exist, it creates the user in Neon.
+ * - If the user is not authenticated, it returns `undefined`.
+ */
 export async function syncUserAction() {
   try {
     const { userId } = await auth()
@@ -38,7 +43,12 @@ export async function syncUserAction() {
   }
 }
 
-// getUser from Neon db
+/**
+ * Fetches the user from the Neon database.
+ * - If `userId` is provided, it fetches the user with the given `clerkId`.
+ * - If `userId` is not provided, it fetches the authenticated user's `clerkId` from Clerk.
+ * - Throws an error if the user is not authenticated or not found in Neon.
+ */
 export async function getUserFromNeon(userId: string) {
   try {
     const user = prisma.user.findUnique({
