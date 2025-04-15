@@ -49,9 +49,19 @@ export async function syncUserAction() {
  * - If `userId` is not provided, it fetches the authenticated user's `clerkId` from Clerk.
  * - Throws an error if the user is not authenticated or not found in Neon.
  */
-export async function getUserFromNeon(userId: string) {
+export async function getUserFromNeon(userId?: string) {
   try {
-    const user = prisma.user.findUnique({
+    // Fetch userId from Clerk if not provided
+    if (!userId) {
+      const { userId: clerkUserId } = await auth()
+      if (!clerkUserId) {
+        throw new Error('User is not authenticated')
+      }
+      userId = clerkUserId
+    }
+
+    // Fetch user from Neon
+    const user = await prisma.user.findUnique({
       where: {
         clerkId: userId,
       },
