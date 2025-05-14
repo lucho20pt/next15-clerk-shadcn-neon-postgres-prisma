@@ -2,6 +2,21 @@
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). It integrates **Clerk** for authentication, **ShadCN** for UI components, **Neon** for PostgreSQL database hosting, and **Prisma** as the ORM.
 
+## Table of Contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Features Implemented](#features-implemented)
+  - [Authentication](#authentication)
+  - [Database](#database)
+  - [UI Components](#ui-components)
+  - [Theme Toggle](#theme-toggle)
+- [Learn More](#learn-more)
+- [Deploy on Vercel](#deploy-on-vercel)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Features
 
 - **Authentication**: Powered by [Clerk](https://clerk.dev) for user authentication and session management.
@@ -22,12 +37,14 @@ npm install
 ```
 
 Define .env variables for (example .env.example):
+
 - clerk
 - neon
 
 Push prisma schema model
 
 Run
+
 ```bash
 npx prisma db push
 ```
@@ -58,18 +75,22 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Features Implemented
 
 ### Authentication
+
 - Integrated Clerk for user authentication.
 - Synced user data from Clerk to Neon using `syncUserAction`.
 
 ### Database
+
 - Used Prisma to define the `User` model and manage database interactions.
 - Added `getUserFromNeon` to fetch user data from Neon.
 
 ### UI Components
+
 - **Sidebar**: Acts as a container for components like `UserPanel` and navigation links.
 - **UserPanel**: Displays user information (authenticated or unauthenticated) based on the user's state.
 
 ### Theme Toggle
+
 - Added a theme toggle component to switch between light and dark modes.
 
 ## Learn More
@@ -91,3 +112,7 @@ Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or submit pull requests to improve this project.
+
+## License
+
+This project is proprietary and all rights are reserved by lucho20pt. Unauthorized use, copying, modification, or distribution of this software is strictly prohibited.
